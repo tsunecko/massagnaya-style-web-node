@@ -1,0 +1,33 @@
+{
+	"name": "massagnaya-style-web-node",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"start": "ts-node src/index.ts",
+		"devstart": "nodemon ./bin/www",
+		"migration:run": "ts-node ./node_modules/.bin/typeorm migration:run"
+	},
+	"dependencies": {
+		"@types/es6-shim": "^0.31.39",
+		"@types/node": "^12.0.8",
+		"cookie-parser": "~1.4.4",
+		"debug": "~2.6.9",
+		"express": "~4.16.1",
+		"http-errors": "~1.6.3",
+		"morgan": "~1.9.1",
+		"mysql2": "^1.6.5",
+		"pug": "2.0.0-beta11",
+		"reflect-metadata": "^0.1.10",
+		"typeorm": "0.2.18",
+		"mysql": "^2.14.1"
+	},
+	"devDependencies": {
+		"@types/bcrypt": "^3.0.0",
+		"@types/node": "^8.0.29",
+		"bcrypt": "^3.0.6",
+		"eslint": "^5.16.0",
+		"nodemon": "^1.19.1",
+		"ts-node": "3.3.0",
+		"typescript": "3.3.3333"
+	}
+}

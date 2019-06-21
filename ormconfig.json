@@ -1,0 +1,26 @@
+{
+	"type": "mysql",
+	"host": "localhost",
+	"port": 3306,
+	"username": "tsuneko",
+	"password": "0000",
+	"database": "massagnayaempty",
+	"charset": "utf8mb4",
+	"synchronize": true,
+	"logging": false,
+	"entities": [
+		"src/entity/*.ts"
+	],
+	"migrations": [
+		"src/migration/*.ts",
+		"src/seed/*.ts"
+	],
+	"subscribers": [
+		"src/subscriber/*.ts"
+	],
+	"cli": {
+		"entitiesDir": "src/entity",
+		"migrationsDir": "src/migration",
+		"subscribersDir": "src/subscriber"
+	}
+}
