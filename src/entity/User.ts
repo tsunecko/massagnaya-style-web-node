@@ -14,6 +14,7 @@ import {
   RelationId
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { Order } from './Order';
 
 @Entity('users', { schema: 'massagnayaempty' })
 @Index('users_email_unique', ['email'], { unique: true })
@@ -110,11 +111,18 @@ export class User {
   })
   updated_at: Date | null;
 
+  @OneToMany(type => Order, orders => orders.user)
+  orders: Order;
+
   hashPassword() {
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync(10));
   }
 
   checkIfUnencryptedPasswordIsValid(unencryptedPassword: string) {
     return bcrypt.compareSync(unencryptedPassword, this.password);
+  }
+
+  getFullName() {
+    return `${this.first_name} ${this.last_name}`;
   }
 }

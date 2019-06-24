@@ -57,4 +57,23 @@ export class Contact {
     name: 'updated_at'
   })
   updated_at: Date | null;
+
+  public static readonly TYPE_INSTAGRAM = 1;
+  public static readonly TYPE_FACEBOOK = 2;
+  public static readonly TYPE_PHONE = 3;
+  public static readonly TYPE_TELEGRAM = 4;
+
+  public static readonly HREF_LIST = {
+    [Contact.TYPE_INSTAGRAM]: 'instagram://user?username=',
+    [Contact.TYPE_FACEBOOK]: 'fb://profile/',
+    [Contact.TYPE_PHONE]: 'tel:',
+    [Contact.TYPE_TELEGRAM]: 'tg://resolve?domain='
+  };
+
+  getHref() {
+    return (Contact.HREF_LIST[this.type]
+      ? Contact.HREF_LIST[this.type]
+      : 'http://'
+    ).this.ref;
+  }
 }

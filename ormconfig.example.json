@@ -2,9 +2,9 @@
 	"type": "mysql",
 	"host": "localhost",
 	"port": 3306,
-	"username": "tsuneko",
-	"password": "0000",
-	"database": "massagnayaempty",
+	"username": "root",
+	"password": "root",
+	"database": "db",
 	"charset": "utf8mb4",
 	"synchronize": true,
 	"logging": false,
@@ -13,7 +13,6 @@
 	],
 	"migrations": [
 		"src/migration/*.ts",
-		"src/seed/*.ts"
 	],
 	"subscribers": [
 		"src/subscriber/*.ts"

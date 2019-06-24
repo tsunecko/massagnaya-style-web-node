@@ -25,9 +25,9 @@
 		"@types/bcrypt": "^3.0.0",
 		"@types/node": "^8.0.29",
 		"bcrypt": "^3.0.6",
+		"clean-css": "^4.2.1",
 		"eslint": "^5.16.0",
 		"nodemon": "^1.19.1",
-		"ts-node": "3.3.0",
-		"typescript": "3.3.3333"
+		"ts-node": "3.3.0"
 	}
 }

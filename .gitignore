@@ -6,3 +6,4 @@ tmp/
 temp/
 output/
 sequalize/
+ormconfig.json

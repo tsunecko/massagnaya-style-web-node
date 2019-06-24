@@ -13,6 +13,9 @@ import {
   PrimaryGeneratedColumn,
   RelationId
 } from 'typeorm';
+import { Employee } from './Employee';
+import { User } from './User';
+import { Product } from './Product';
 
 @Entity('orders', { schema: 'massagnayaempty' })
 export class Order {
@@ -63,4 +66,15 @@ export class Order {
     name: 'updated_at'
   })
   updated_at: Date | null;
+
+  @ManyToOne(type => Employee, employee => employee.orders)
+  employee: Employee;
+
+  @ManyToOne(type => User, user => user.orders)
+  user: User;
+
+  // relation ManyToMany -> order.products
+  @ManyToMany(type => Product)
+  @JoinTable()
+  products: Product[];
 }

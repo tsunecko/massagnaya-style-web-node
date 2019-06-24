@@ -13,6 +13,7 @@ import {
   PrimaryGeneratedColumn,
   RelationId
 } from 'typeorm';
+import { Category } from './Category';
 
 @Entity('products', { schema: 'massagnayaempty' })
 export class Product {
@@ -69,4 +70,7 @@ export class Product {
     name: 'updated_at'
   })
   updated_at: Date | null;
+
+  @ManyToOne(type => Category, category => category.products)
+  category: Category;
 }

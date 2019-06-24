@@ -6,25 +6,25 @@ export class SeedContact1561125468778 implements MigrationInterface {
     let contactPhone = new Contact();
     contactPhone.name = '+38 068 816 48 16';
     contactPhone.icon = 'call';
-    contactPhone.type = 3;
+    contactPhone.type = Contact.TYPE_PHONE;
     contactPhone.ref = '+380688164816';
 
     let contactTelegram = new Contact();
     contactTelegram.name = '@Svetlana_013';
     contactTelegram.icon = 'paper-plane';
-    contactTelegram.type = 4;
+    contactTelegram.type = Contact.TYPE_TELEGRAM;
     contactTelegram.ref = 'Svetlana_013';
 
     let contactInstagram = new Contact();
     contactInstagram.name = 'massagnaya_style';
     contactInstagram.icon = 'logo-instagram';
-    contactInstagram.type = 1;
+    contactInstagram.type = Contact.TYPE_INSTAGRAM;
     contactInstagram.ref = 'massagnaya_style';
 
     let contactFacebook = new Contact();
     contactFacebook.name = 'sveta.massage.kh';
     contactFacebook.icon = 'logo-facebook';
-    contactFacebook.type = 2;
+    contactFacebook.type = Contact.TYPE_FACEBOOK;
     contactFacebook.ref = 'sveta.massage.kh';
 
     const now = new Date();

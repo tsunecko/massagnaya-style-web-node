@@ -13,6 +13,7 @@ import {
   PrimaryGeneratedColumn,
   RelationId
 } from 'typeorm';
+import { Employee } from './Employee';
 
 @Entity('addresses', { schema: 'massagnayaempty' })
 export class Address {
@@ -51,4 +52,7 @@ export class Address {
     name: 'updated_at'
   })
   updated_at: Date | null;
+
+  @OneToMany(type => Employee, employees => employees.address)
+  employees: Employee;
 }

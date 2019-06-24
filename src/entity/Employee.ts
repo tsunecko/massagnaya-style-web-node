@@ -13,6 +13,8 @@ import {
   PrimaryGeneratedColumn,
   RelationId
 } from 'typeorm';
+import { Address } from './Address';
+import { Order } from './Order';
 
 @Entity('employees', { schema: 'massagnayaempty' })
 export class Employee {
@@ -63,4 +65,10 @@ export class Employee {
     name: 'updated_at'
   })
   updated_at: Date | null;
+
+  @ManyToOne(type => Address, address => address.employees)
+  address: Address;
+
+  @OneToMany(type => Order, orders => orders.employee)
+  orders: Order;
 }
